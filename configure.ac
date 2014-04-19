@@ -316,7 +316,8 @@ dnl * optional mono bindings
 dnl **************************************************
 
 MONO_MIN_VERSION=1.9.1
-GTK_SHARP_MIN_VERSION=2.12
+GTK_SHARP2_MIN_VERSION=2.12
+GTK_SHARP3_MIN_VERSION=2.99
 LIBGPOD_CHECK_MONO
 AC_CHECK_ALIGNOF([double])
 if test "$ac_cv_alignof_double" -eq 4 ; then

@@ -26,7 +26,7 @@ AC_DEFUN([IF_WITH_MONO],
 AC_DEFUN([BAIL_OR_DISABLE_MONO]
 [
 	if test "$with_mono" = "yes"; then
-		AC_MSG_ERROR([You need to install '$1'])
+		AC_MSG_ERROR([You need to install $1])
 	elif
 		with_mono=no
 	fi
@@ -60,18 +60,47 @@ AC_DEFUN([SHAMROCK_CHECK_MONO_MODULE],
 			  [], [BAIL_OR_DISABLE_MONO([mono])])
 ])
 
+AC_DEFUN([CHECK_GLIB_GTK_SHARP_VERSION],
+[
+	AC_ARG_WITH([gtksharp$1],
+		    [AC_HELP_STRING([--with-gtksharp$1=[[yes|no|auto]]],
+				    [build gtk-sharp$1 bindings])],
+		    [], [with_gtksharp$1=auto])
+
+	case "$with_gtksharp$1" in
+		yes|auto)
+			found_gtksharp$1=yes
+
+			PKG_CHECK_MODULES(
+				[GDKSHARP$1],
+				[gtk-sharp-$1.0 >= $GTK_SHARP$1_MIN_VERSION],
+				[], [found_gtksharp$1="no"])
+			PKG_CHECK_MODULES(
+				[GLIBSHARP$1],
+				[glib-sharp-$1.0 >= $GTK_SHARP$1_MIN_VERSION],
+				[], [found_gtksharp$1="no"])
+
+			if test "$with_gtksharp$1" = "yes" -a \
+				"$found_gtksharp$1" = "no"; then
+				AC_MSG_ERROR([You need to install gtk-sharp$1])
+
+			elif test "$found_gtksharp$1" = "yes"; then
+				with_gtksharp$1=yes
+
+			else
+				with_gtksharp$1=no
+			fi
+			;;
+	esac
+])
+
 AC_DEFUN([CHECK_GLIB_GTK_SHARP],
 [
-        found_gtksharp="yes"
-	PKG_CHECK_MODULES([GDKSHARP], [gtk-sharp-2.0 >= $GTK_SHARP_MIN_VERSION],
-			  [], [found_gtksharp="no"])
+	CHECK_GLIB_GTK_SHARP_VERSION([2])
+	CHECK_GLIB_GTK_SHARP_VERSION([3])
 
-	PKG_CHECK_MODULES([GLIBSHARP],
-			  [glib-sharp-2.0 >= $GTK_SHARP_MIN_VERSION],
-			  [], [found_gtksharp="no"])
-
-	if test "X$found_gtksharp" != "Xyes"; then
-		BAIL_OR_DISABLE_MONO([gtk-sharp])
+	if test "$with_gtksharp2" != "yes" -a "$with_gtksharp3" != "yes"; then
+		BAIL_OR_DISABLE_MONO([gtk-sharp2 or gtk-sharp3])
 	fi
 ])
 
