@@ -1,0 +1,8 @@
+Libraries=@expanded_libdir@/@PACKAGE@/libgpod-sharp-gtk3.dll
+
+Name: libgpod-sharp-gtk3
+Description: libgpod-sharp-gtk3
+Version: @VERSION@
+
+Requires: glib-sharp-3.0 gtk-sharp-3.0
+Libs: -r:${Libraries}
