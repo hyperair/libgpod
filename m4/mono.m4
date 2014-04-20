@@ -23,7 +23,7 @@ AC_DEFUN([IF_WITH_MONO],
 	esac
 ])
 
-AC_DEFUN([BAIL_OR_DISABLE_MONO]
+AC_DEFUN([BAIL_OR_DISABLE_MONO],
 [
 	if test "$with_mono" = "yes"; then
 		AC_MSG_ERROR([You need to install $1])
