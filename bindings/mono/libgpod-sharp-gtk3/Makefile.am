@@ -17,7 +17,7 @@ ORIGSOURCES =  \
 	Playlist.cs \
 	Thumbnail.cs \
 	Track.cs
-SOURCES = $(addprefix ../,$(ORIGSOURCES))
+SOURCES = $(addprefix ../libgpod-sharp-gtk2/,$(ORIGSOURCES))
 
 dlname := $(shell grep "^dlname=" $(top_builddir)/src/libgpod.la | sed "s/^dlname='\(.*\)'/\1/g")
 libgpod-sharp-gtk3.dll.config: libgpod-sharp-gtk3.dll.config.in
