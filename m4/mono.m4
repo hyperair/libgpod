@@ -63,7 +63,7 @@ AC_DEFUN([SHAMROCK_CHECK_MONO_MODULE],
 AC_DEFUN([CHECK_GLIB_GTK_SHARP_VERSION],
 [
 	AC_ARG_WITH([gtksharp$1],
-		    [AC_HELP_STRING([--with-gtksharp$1=[[yes|no|auto]]],
+		    [AS_HELP_STRING([--with-gtksharp$1 [[default=auto]]],
 				    [build gtk-sharp$1 bindings])],
 		    [], [with_gtksharp$1=auto])
 
@@ -92,8 +92,6 @@ AC_DEFUN([CHECK_GLIB_GTK_SHARP_VERSION],
 			fi
 			;;
 	esac
-
-        AM_CONDITIONAL([HAVE_GTKSHARP$1], [test "$with_gtksharp$1" = "yes"])
 ])
 
 AC_DEFUN([CHECK_GLIB_GTK_SHARP],
@@ -124,5 +122,8 @@ AC_DEFUN([LIBGPOD_CHECK_MONO],
 	IF_WITH_MONO([CHECK_GLIB_GTK_SHARP])
 
 	test "$with_mono" = "auto" && with_mono=yes
+
 	AM_CONDITIONAL(HAVE_MONO, test "$with_mono" = "yes")
+        AM_CONDITIONAL(HAVE_GTKSHARP2, test "$with_gtksharp2" = yes)
+        AM_CONDITIONAL(HAVE_GTKSHARP3, test "$with_gtksharp3" = yes)
 ])
