@@ -1,6 +1,6 @@
 ASSEMBLY = libgpod-sharp-test
 TARGET = exe
-LINK = -r:../libgpod-sharp/libgpod-sharp.dll
+LINK = -r:../libgpod-sharp-gtk2/libgpod-sharp.dll
 
 SOURCES =  \
 	AssemblyInfo.cs \

@@ -1,6 +1,6 @@
 ASSEMBLY = libgpod-sharp-gtk3-test
 TARGET = exe
-LINK = -r:../libgpod-sharp/libgpod-sharp-gtk3.dll
+LINK = -r:../libgpod-sharp-gtk3/libgpod-sharp-gtk3.dll
 
 SOURCES =  \
 	../libgpod-sharp-gtk2-test/AssemblyInfo.cs \
