@@ -1,6 +1,6 @@
 ASSEMBLY = libgpod-sharp
 TARGET = library
-LINK = $(GLIBSHARP_LIBS) $(GDKSHARP_LIBS)
+LINK = $(GLIBSHARP2_LIBS) $(GDKSHARP2_LIBS)
 
 SOURCES =  \
 	Artwork.cs \
