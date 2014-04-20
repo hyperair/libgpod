@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libgpod-sharp", "libgpod-sharp\libgpod-sharp.csproj", "{FDD7AB7C-8712-4631-974C-2F7A9EF77C58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libgpod-sharp-gtk2", "libgpod-sharp-gtk2\libgpod-sharp-gtk2.csproj", "{FDD7AB7C-8712-4631-974C-2F7A9EF77C58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libgpod-sharp-test", "libgpod-sharp-test\libgpod-sharp-test.csproj", "{507CCD05-1478-48DF-8DC8-6F1A7FE5E40F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libgpod-sharp-gtk2-test", "libgpod-sharp-gtk2-test\libgpod-sharp-gtk2-test.csproj", "{507CCD05-1478-48DF-8DC8-6F1A7FE5E40F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

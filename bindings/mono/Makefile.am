@@ -1,1 +1,1 @@
-SUBDIRS=libgpod-sharp libgpod-sharp-test
+SUBDIRS=libgpod-sharp-gtk2 libgpod-sharp-gtk2-test
