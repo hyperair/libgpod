@@ -92,6 +92,8 @@ AC_DEFUN([CHECK_GLIB_GTK_SHARP_VERSION],
 			fi
 			;;
 	esac
+
+        AM_CONDITIONAL([HAVE_GTKSHARP$1], [test "$with_gtksharp$1" = "yes"])
 ])
 
 AC_DEFUN([CHECK_GLIB_GTK_SHARP],
