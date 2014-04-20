@@ -19,7 +19,7 @@ SOURCES =  \
 	Track.cs
 
 dlname := $(shell grep "^dlname=" $(top_builddir)/src/libgpod.la | sed "s/^dlname='\(.*\)'/\1/g")
-libgpod-sharp.dll.config: $(top_srcdir)/bindings/mono/libgpod-sharp/libgpod-sharp.dll.config.in 
+libgpod-sharp.dll.config: libgpod-sharp.dll.config.in
 	sed "s/@DLNAME@/$(dlname)/g" $< >$@
 
 pkgconfigdir = $(libdir)/pkgconfig
