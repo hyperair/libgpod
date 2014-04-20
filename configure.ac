@@ -386,7 +386,7 @@ bindings/mono/libgpod-sharp-gtk2-test/libgpod-sharp-test
 bindings/mono/libgpod-sharp-gtk3/libgpod-sharp-gtk3.pc
 bindings/mono/libgpod-sharp-gtk3/Makefile
 bindings/mono/libgpod-sharp-gtk3-test/Makefile
-bindings/mono/libgpod-sharp-gtk3-test/libgpod-sharp-test
+bindings/mono/libgpod-sharp-gtk3-test/libgpod-sharp-gtk3-test
 bindings/python/gpod.i
 bindings/python/Makefile
 bindings/python/examples/Makefile
